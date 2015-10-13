@@ -1,3 +1,5 @@
+/choimirai/local_settings.py
 /static
 *.pyc
+.idea/
 /media

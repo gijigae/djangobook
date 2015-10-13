@@ -77,12 +77,7 @@ WSGI_APPLICATION = 'choimirai.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangobook_db',
-    }
-}
+
 
 
 # Internationalization
@@ -110,3 +105,8 @@ STATIC_URL = '/static/'
 #     # Don't forget to use absolute paths, not relative paths.
 #     os.path.join('/Users/sangmin/Dev/django-venv/django-project/choimirai/', 'templates'),
 # )
+
+try:
+    exec(open(os.path.join(BASE_DIR, 'choimirai', 'local_settings.py')).read())
+except IOError:
+    pass
