@@ -30,6 +30,7 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author)
     publisher = models.ForeignKey(Publisher)
     publication_date = models.DateField(null=True, blank=True)
+    num_pages = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.title
