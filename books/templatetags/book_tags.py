@@ -1,6 +1,7 @@
 from django import template
 import datetime
 import re
+from books.models import Book
 
 
 class CurrentTimeNode(template.Node):
@@ -83,3 +84,9 @@ def do_current_time3(parser, token):
         raise template.TemplateSyntaxError(msg)
 
     return CurrentTimeNode3(fmt[1:-1], var_name)
+
+
+@register.inclusion_tag('book_snippet.html')
+def books_for_author():
+    books = Book.objects.all()
+    return {'books': books}

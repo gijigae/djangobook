@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^contact/$', contact),
     url(r'^contact/thanks/$', thanks),
     url(r'^current_time/$', 'books.contact.views.current_time'),
+    url(r'^books_for_author/$', 'books.views.books_for_author'),
 ]

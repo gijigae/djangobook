@@ -22,3 +22,7 @@ def search(request):
     return render(request, 'search_form.html', {'errors': errors})
 
 
+def books_for_author(request):
+    return render(request, 'book_snippet.html')
+
+
