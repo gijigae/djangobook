@@ -1,0 +1,7 @@
+{% load book_tags %}
+<p>The time is {% current_time "%Y-%m-%d %I:%M %p" %}.</p>
+
+{# The second current_time2 is a variable whose value is generated in the folloiwng assignment.#}
+{# context['current_time2'] = now.strftime(self.format_string) #}
+{% current_time2 "%Y-%m-%d %I:%M %p" %}
+<p>The time2 is {{ current_time2 }}.</p>

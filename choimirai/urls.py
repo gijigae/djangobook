@@ -29,4 +29,6 @@ urlpatterns = [
     url(r'^search/$', views.search),
     url(r'^contact/$', contact),
     url(r'^contact/thanks/$', thanks),
+    url(r'^current_time/$', 'books.contact.views.current_time'),
+    url(r'^current_time2/$', 'books.contact.views.current_time2')
 ]

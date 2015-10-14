@@ -25,3 +25,11 @@ def contact(request):
 
 def thanks(request):
     return render(request, 'thanks.html')
+
+
+def current_time(request):
+    return render(request, 'current_time.html')
+
+
+def current_time2(request):
+    return render(request, 'current_time.html')
