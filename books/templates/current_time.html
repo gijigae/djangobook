@@ -5,3 +5,7 @@
 {# context['current_time2'] = now.strftime(self.format_string) #}
 {% current_time2 "%Y-%m-%d %I:%M %p" %}
 <p>The time2 is {{ current_time2 }}.</p>
+
+{# Hours in 24h format #}
+{% current_time3 "%Y-%M-%d %H:%M" as my_current_time %}
+<p>The time3 is {{ my_current_time }}.</p>

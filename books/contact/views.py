@@ -30,6 +30,3 @@ def thanks(request):
 def current_time(request):
     return render(request, 'current_time.html')
 
-
-def current_time2(request):
-    return render(request, 'current_time.html')
