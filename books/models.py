@@ -30,13 +30,19 @@ class BookManager(models.Manager):
         return self.filter(title__icontains=keyword).count()
 
 
+class AuthorBookManager(models.Manager):
+    def get_queryset(self):
+        return super(AuthorBookManager, self).get_queryset().filter(authors=1)
+
+
 class Book(models.Model):
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField(Author)
     publisher = models.ForeignKey(Publisher)
     publication_date = models.DateField(null=True, blank=True)
     num_pages = models.IntegerField(blank=True, null=True)
-    objects = BookManager()
+    objects = models.Manager() # The default manager.
+    author_objects = AuthorBookManager() # Author-specific manager.
 
     def __str__(self):
         return self.title
