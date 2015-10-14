@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from choimirai.views import hello, current_datetime, hours_ahead, display_meta
 from books import views
+from books.contact.views import contact, thanks
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -25,6 +26,7 @@ urlpatterns = [
     url(r'^time/plus/(\d{1,2})/$', hours_ahead),
     # url(r'^$', my_homepage_view),
     url(r'^displaymeta/$', display_meta),
-    # url(r'^search-form/$', views.search_form),
     url(r'^search/$', views.search),
+    url(r'^contact/$', contact),
+    url(r'^contact/thanks/$', thanks),
 ]
