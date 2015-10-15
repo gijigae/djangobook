@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^current_time/$', 'books.contact.views.current_time'),
     url(r'^books_for_author/$', 'books.views.books_for_author'),
     url(r'^publishers/$', views.PublisherList.as_view()),
+    url(r'^publisher_detail/(?P<pk>\d+)/$', views.PublisherDetail.as_view()),
 ]
