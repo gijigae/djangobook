@@ -10,6 +10,7 @@ from django.views.generic import ListView
 class PublisherList(ListView):
     model = Publisher
     template_name = 'publisher_list.html'
+    context_object_name = 'publishers'
 
 
 def search(request):
