@@ -35,4 +35,5 @@ urlpatterns = [
     url(r'^publishers/$', views.PublisherList.as_view()),
     url(r'^publisher_detail/(?P<pk>\d+)/$', views.PublisherDetail.as_view()),
     url(r'^books/([\w-]+)/$', views.PublisherBookList.as_view()),
+    url(r'^authors/(?P<pk>\d+)/$', views.AuthorDetailView.as_view(), name='author-detail'),
 ]

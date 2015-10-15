@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from books.models import Book, Publisher
+from books.models import Book, Publisher, Author
 from django.views.generic import ListView, DetailView
-
+from django.utils import timezone
 
 # def search_form(request):
 #     return render(request, 'search_form.html')
@@ -60,6 +60,30 @@ def search(request):
 
 def books_for_author(request):
     return render(request, 'book_snippet.html')
+
+
+class AuthorDetailView(DetailView):
+    queryset = Author.objects.all()
+    template_name = 'author_detail.html'
+    # context_object_name = 'author_list'
+
+    def get_object(self):
+        # Call the superclass
+        object = super(AuthorDetailView, self).get_object()
+        # Record the last accessed date
+        object.last_accessed = timezone.now()
+        object.save()
+        # Return the object
+        return object
+
+    # def get_queryset(self):
+    #     self.author = get_object_or_404(Author, id=self.args[0])
+    #     return Author.objects.filter(author=self.author)
+
+    def get_context_data(self, **kwargs):
+        context = super(AuthorDetailView, self).get_context_data(**kwargs)
+        context['author_list'] = Author.objects.all()
+        return context
 
 
 
