@@ -19,6 +19,7 @@ from choimirai.views import hello, current_datetime, hours_ahead, display_meta
 from books import views
 from books.contact.views import contact, thanks
 
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', hello),
@@ -31,4 +32,5 @@ urlpatterns = [
     url(r'^contact/thanks/$', thanks),
     url(r'^current_time/$', 'books.contact.views.current_time'),
     url(r'^books_for_author/$', 'books.views.books_for_author'),
+    url(r'^publishers/$', views.PublisherList.as_view()),
 ]

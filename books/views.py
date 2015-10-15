@@ -1,10 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from books.models import Book
-
+from books.models import Book, Publisher
+from django.views.generic import ListView
 
 # def search_form(request):
 #     return render(request, 'search_form.html')
+
+
+class PublisherList(ListView):
+    model = Publisher
+    template_name = 'publisher_list.html'
 
 
 def search(request):
@@ -24,5 +29,8 @@ def search(request):
 
 def books_for_author(request):
     return render(request, 'book_snippet.html')
+
+
+
 
 
