@@ -1,3 +1,5 @@
 Django==1.8.5
+django-debug-toolbar==1.4
 psycopg2==2.6.1
 pytz==2015.6
+sqlparse==0.1.16
